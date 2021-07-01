@@ -1,0 +1,67 @@
+.socials {
+  text-align: center;
+  font-weight: 600;
+  color: var(--links);
+  text-transform: capitalize;
+  font-size: 2.5rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.my-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+
+  @include media($lg) {
+    flex-direction: column;
+    gap: 30px;
+    &-Instagram {
+      display: flex;
+      align-items: center
+;
+    }
+    .title-soc {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &-instagram {
+    width: 220px;
+    height: 220px;
+  }
+
+  &-Telegram {
+    width: 220px;
+    height: 220px;
+  }
+
+  &-Github {
+    width: 220px;
+    height: 220px;
+  }
+
+  &-Tik {
+    width: 220px;
+    height: 220px;
+  }
+
+}
+
+.title-soc {
+  font-size: 35px;
+  font-weight: 400;
+  color: var(--links);
+  margin-bottom: 7px;
+  text-align: center;
+
+}
+
+@include media($sm) {
+  .btn-top {
+    display: none;
+  }
+}

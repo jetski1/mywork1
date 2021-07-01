@@ -1,0 +1,15 @@
+nav.header__nav
+    a.header__nav-logo(href="#")
+        img(src="/images/logo.webp" alt="") 
+   
+    button.header__nav-btn 
+        img(src="/images/menu.svg", alt="")
+    ul.header__nav-list
+        -for(var i = 0; i < links.length; i++)
+            li.header__nav-item
+                a(href= links[i].href).header__nav-link= links[i].name
+        li.header__nav-item
+            a(href="#").header__nav-link.order К заказу
+        li.header__nav-item
+            a(href="tel:+998 91 234 56 78")
+                img(src="/images/tel.webp" alt="")

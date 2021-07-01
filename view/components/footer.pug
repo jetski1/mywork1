@@ -1,0 +1,15 @@
+footer.footer 
+    .my-work
+        .footer__content
+            a.footer__content-logo(href="#")
+                img(src="/images/logo.webp", alt="")
+            nav.footer__content-links
+                ul.footer__content-list
+                    each link in links
+                        li.footer__content-item
+                            a(href= link.href).footer__content-link= link.name
+            ul.footer__content-contacts
+                li.footer__content-contacts_item
+                    a.footer__content-contacts_link(href="tel: +99293 555 01 08") +998 (90) 349 66 99
+                li.footer__content-contacts_item
+                    a.footer__content-contacts_link(href="mailto: Richards@gmail.com")   bekzod2478@gmail.com

@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title My Work
+        link(rel="icon", href="/images/icon.webp")
+        link(rel="stylesheet", href="/style/main.css")
+        link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+
+    body 
+        .wrapper
+            //- .wrapper = <div class="wrapper"></div>
+            include view/index.pug 
+            //- include делает подключение файла
+            .btn-top 
+                img(src="/images/totop.webp", alt="")
+              
+        script(src="/script/common.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")

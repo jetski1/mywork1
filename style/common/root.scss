@@ -1,0 +1,44 @@
+$fonts: ('Montserrat', 'Regular', 400),
+        ('Montserrat', 'SemiBold', 600),
+        ('Montserrat', 'Black', 900),
+        ('Montserrat', 'BoldItalic', 700);
+
+@each $folder, $file_name, $weight in $fonts {
+    @font-face {
+        font-family: $folder;
+        src: url(/fonts/#{$folder}/#{$folder}-#{$file_name}.woff);
+        font-weight: $weight;
+    }
+}
+:root {
+    font-size: 16px;
+    --links: #7177F1;
+    --links-hover: #4f54b4;
+    --text: white;
+    --bg: #151437;
+    --bg-scroll: #34318d;
+    --mark: #0FDAC2;
+    --border: #DDDDDD;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background: var(--bg);
+    transition: 200ms;
+}
+:hover::-webkit-scrollbar {
+    background: var(--bg-scroll);
+}
+::-webkit-scrollbar-thumb {
+    width: 8px;
+    background: var(--bg);
+    transition: 200ms;
+}
+:hover::-webkit-scrollbar-thumb {
+    background: var(--links);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--links-hover);
+}
+@mixin shadow($blur, $scale) {
+    box-shadow: 0px 0px #{$blur}px #{$scale}px rgba(113, 119, 241, 0.15);
+}

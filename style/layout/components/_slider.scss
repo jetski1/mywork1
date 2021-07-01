@@ -1,0 +1,124 @@
+.slider {
+    height: 500px;
+    &__item {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        align-items: center;
+        height: 100%;
+        @include media($md) {
+            grid-template-columns: 100%;
+        }
+        &-pic {
+            max-width: 572px;
+            width: 100%;
+            object-fit: cover;
+            @include media($md) {
+                display: none;
+            }
+        }
+        &-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &-title {
+            max-width: 520px;
+            width: 100%;
+            color: var(--text);
+            font-weight: 600;
+            text-transform: capitalize;
+            @include media($md) {
+                text-align: center;
+            }
+        }
+        &-desc {
+            max-width: 520px;
+            width: 100%;
+            color: var(--links);
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            @include media($md) {
+                font-size: 1.125rem;
+                text-align: center;
+            }
+        }
+        &-link {
+            max-width: 300px;
+            width: 100%;
+            padding: 13px 58px;
+            background: var(--links);
+            color: var(--text);
+            @include shadow(5, 1);
+            border-radius: 8px;
+            font-size: 1.12rem;
+            @include media($md) {
+                max-width: 250px;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+        &-tech {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+            gap: 30px;
+            margin-top: 50px;
+            text-transform: uppercase;
+            color: var(--links);
+            &nologi {
+                text-align: center;
+                &_title {
+                    font-weight: 900;
+                }
+                    
+            }
+        }
+    }
+    &__line {
+        display: flex;
+        gap: 10px;
+        max-width: 250px;
+        margin: 50px auto 0;
+        &-item {
+            height: 3px;
+            background: rgba($color: white, $alpha: 0.5);
+            width: 100%;
+            &::before {
+                content: '';
+                display: block;
+                background: var(--text);
+                width: 0;
+                height: 100%;
+            }
+            &.active {
+                &::before {
+                    animation: lineFX 5s linear;
+                    
+                }
+                &.paused {
+                    &::before {
+                        animation-play-state: paused;
+                    }
+                }
+            }
+            &.show {
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@keyframes lineFX {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}

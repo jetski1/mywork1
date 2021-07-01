@@ -1,0 +1,41 @@
+$xxl: 1400px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$gutters: 30px;
+$gutters-side: $gutters / 2;
+
+@mixin container($padding: $gutters-side) {
+    max-width: $xxl * 0.9428571428571429;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $padding;
+    padding-right: $padding;
+    @include media($xxl) {
+        max-width: $xl * 0.95;
+    }
+    @include media($xl) {
+        max-width: $lg * 0.967;
+    }
+    @include media($lg) {
+        max-width: $md * 0.9375;
+    }
+    @include media($md) {
+        max-width: $sm * 0.9375;
+    }
+    @include media($sm) {
+        max-width: 100%;
+    }
+}
+
+@mixin media($size: $xxl) {
+    @media (max-width: $size) {
+        @content;
+    }
+}
+
+.my-work {
+    @include container()
+}

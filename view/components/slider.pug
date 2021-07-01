@@ -1,0 +1,5 @@
+.slider
+    .slider__inner
+        -var slider_data = [{title: 'Моя работа', desc: 'Работа Веб-программистом', tech: [{img: '/images/slhtml.webp', name: 'HTML'}, {img: '/images/slcss.webp', name: 'CSS'}, {img: '/images/slbs.webp', name: 'bootstrap 5'}], link: {href: "http://t.me/jetskicontact_bot", text: "Начать заказ сейчас"}, img: "/images/slider.webp"},                                                      {title: 'Hello!', desc: 'My Fulll-name is Shorasulov Bekzod', tech: [{img: '/images/slhtml.webp', name: 'HTML'}, {img: '/images/slcss.webp', name: 'CSS'}, {img: '/images/slbs.webp', name: 'bootstrap 5'}], link: {href: "http://t.me/jetskicontact_bot", text: "Начать сейчас"}, img: "/images/slider.webp"} ,                                                                             {title: 'Моя работа', desc: 'Self-development and training in the training center'}] 
+        each slide in slider_data
+            include slider/slider-item.pug

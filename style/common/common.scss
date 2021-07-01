@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper {
+  font-family: 'Montserrat';
+  background: var(--bg);
+}
+
+.btn-top {
+  
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 5px;
+  z-index: 99;
+  border: navajowhite;
+  outline: none;
+  cursor: pointer;
+  transition: 200ms;
+}
+

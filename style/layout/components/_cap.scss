@@ -1,0 +1,90 @@
+.cap {
+    position: relative;
+    margin-top: 75px;
+    &__preview {
+        width: 50%;
+        @include media($md) {
+            width: 80%;
+        }
+    }
+    &__title {
+        text-align: center;
+        font-weight: 600;
+        font-size: 2.5rem;
+        line-height: 1.225em;
+        color: var(--links);
+        text-transform: capitalize;
+        margin-bottom: 30px;
+    }
+    &__content {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        @include media($md) {
+            flex-direction: column-reverse;
+        }
+    }
+    
+    &__tech {
+        @include shadow(5, 3);
+        border-radius: 8px;
+        overflow: hidden;
+        $parent: &;
+        &-item {
+            background: var(--bg);
+            transition: 200ms;
+            border-bottom: 1px solid var(--border);
+            &:last-of-type {
+                border: none;
+            }
+            &.show {
+                background: var(--links);
+                border-bottom-color: transparent; 
+                #{$parent}-title {
+                    color: var(--text);
+                }
+                #{$parent}-head::after {
+                    border-top-color: var(--text);
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        &-head {
+            display: flex;
+            align-items: center;
+            padding: 15px 30px;
+            gap: 20px;
+            user-select: none;
+            cursor: pointer;
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                right: 30px;
+                border: 10px solid transparent;
+                border-top: 10px solid var(--links);
+                border-bottom: 0;
+                transition: transform 200ms;
+            }
+        }
+        &-title {
+            text-transform: uppercase;
+            font-size: 1.12rem;
+            color: var(--links);
+            font-weight: 900;
+            transition: 200ms;
+        }
+        &-desc {
+            color: var(--text);
+            font-size: 1.12rem;
+            text-transform: capitalize;
+            line-height: 1.5em;
+            height: 0;
+            overflow: hidden;
+            transition: 200ms;
+            &_text {
+                padding: 10px 30px 55px;
+            }
+        }
+    }
+}
